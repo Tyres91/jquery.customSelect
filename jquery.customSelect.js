@@ -1,5 +1,5 @@
 /*!
- * jquery.customSelect() - v0.6.0
+ * jquery.customSelect() - v0.6.1
  * https://github.com/Tyres91/jquery.customSelect
  * 2015-10-21
  *
@@ -19,6 +19,7 @@
         if (typeof document.body.style.maxHeight === 'undefined') {
           return this;
         }
+
         var defaults = {
             customClass: 'customSelect',
             mapClass: true,
@@ -32,9 +33,17 @@
             onBlur: function () {},
             onMouseEnter: function () {},
             onMouseLeave: function () {}
-          },
-          options = $.extend(defaults, options),
-          prefix = options.customClass,
+          };
+
+          if(options == 'destroy'){
+            this.removeClass('hasCustomSelect').attr('style', '');
+            this.next().remove();
+            return this;
+          }
+
+          var options = $.extend( {}, defaults, options );
+
+          var prefix = options.customClass,
           changed = function ($select, customSelectSpan) {
             var currentSelected = $select.find(':selected'),
               customSelectSpanInner = customSelectSpan.children(':first'),
@@ -58,6 +67,7 @@
           getClass = function (suffix) {
             return prefix + suffix;
           };
+
 
         return this.each(
           function () {
@@ -198,7 +208,8 @@
               .trigger('render.customSelect');
           }
         );
-      }
+      },
+
     }
   );
 })(jQuery);

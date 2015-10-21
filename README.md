@@ -83,11 +83,15 @@ $('#someSelectBox').customSelect({
     onMouseEnter: function () {}, // Fire after mouse enter
     onMouseLeave: function () {} // Fire after mouse leave
 });
+$('#someSelectBox').customSelect('destroy'); // destroy the element
 ```
 
 
 ## Changelog
-Version 0.6.0 (19/03/2013)
+Version 0.6.1 (21/10/2015)
+ * Add destroy command
+
+Version 0.6.0 (21/10/2015)
  * Add events to options
 
 Version 0.5.1 (19/03/2013)

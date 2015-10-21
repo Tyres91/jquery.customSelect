@@ -5,10 +5,15 @@
 <title>Style Select Boxes Using jQuery + CSS</title>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript" src="jquery.customSelect.js"></script>
+<script type="text/javascript" src="cycle.js"></script>
 <script type="text/javascript">
 $(function(){
 
-$('select.styled').customSelect();
+  var $select = $('select.styled');
+  $select.customSelect();
+  $select.customSelect('destroy');
+  $select.customSelect();
+  //$select.cycle('destroy');
 
 });
 </script>
