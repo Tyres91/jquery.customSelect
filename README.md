@@ -72,12 +72,24 @@ There are a few extra options if you need them
 $('#someSelectBox').customSelect({
     customClass: "mySexySelect", // Specify a different class name (default is 'customSelect')
     mapClass:    true, // Copy any existing classes from the given select element (defaults to true)
-    mapStyle:    true // Copy the value of the style attribute from the given select element (defaults to true)
+    mapStyle:    true, // Copy the value of the style attribute from the given select element (defaults to true)
+    onChange: function () {}, // Fire after change
+    onRender: function () {}, // Fire after render
+    onKeyUp: function () {},  // Fire after key up
+    onMouseDown: function () {}, // Fire after mouse down
+    onMouseUp: function () {}, // Fire after mouse up
+    onFocus: function () {}, // Fire after focus
+    onBlur: function () {}, // Fire after blur
+    onMouseEnter: function () {}, // Fire after mouse enter
+    onMouseLeave: function () {} // Fire after mouse leave
 });
 ```
 
 
 ## Changelog
+Version 0.6.0 (19/03/2013)
+ * Add events to options
+
 Version 0.5.1 (19/03/2013)
  * Merge fix for #60 by gu3st (Fixes issue when select box moves from display:none; to display:block;)
 
@@ -147,7 +159,7 @@ CHANGES IN 0.2.0
  * You can now have styles for when select box is open or focused via the classes .customSelectOpen and .customSelectFocus
  * ability to set a custom class by passing in {customClass:'myClassName'}
 
-Copyright 2013 Adam Coulombe
+Copyright 2015 Rocky Ory
 
 Dual licensed under the MIT and GPL licenses:
  *    http://www.gnu.org/licenses/gpl.html
