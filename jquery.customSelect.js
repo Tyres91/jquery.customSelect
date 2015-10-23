@@ -208,8 +208,7 @@
               .trigger('render.customSelect');
           }
         );
-      },
-
+      }
     }
   );
 })(jQuery);
